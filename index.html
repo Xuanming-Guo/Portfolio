@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Your Name</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+   </head>
+  <body>
+
+    <div id="dynamic-background"></div>
+
+    <div id="spotlight-overlay"></div>
+
+    <div id="background-indicator">Gradient Background</div>
+
+
+    <nav id="navbar">
+      <ul>
+
+        <li><a href="#home" class="nav-link dynamic-text active">Home</a></li>
+        <li><a href="#about" class="nav-link dynamic-text">About Me</a></li>
+        <li><a href="#projects" class="nav-link dynamic-text">Projects</a></li>
+        <li><a href="#skills" class="nav-link dynamic-text">Skills</a></li>
+        <li><a href="#achievements" class="nav-link dynamic-text">Achievements</a></li>
+      </ul>
+    </nav>
+
+
+    <section id="home" class="section">
+      <div class="content">
+
+        <h1 class="header-text animated-name">Xuanming Guo</h1>
+        <p class="header-text">
+          Current Rochdale Sixth Form Student
+        </p>
+        <div class="social-icons dynamic-text">
+
+          <a
+            href="https://www.instagram.com/xuanming_guo/"
+            target="_blank"
+            title="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/xuanming-guo-5814b3337"
+            target="_blank"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/Xuanming-Guo"
+            target="_blank"
+            title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="mailto:xuanmingguo2314@outlook.com" title="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="section">
+      <div class="content">
+        <h2>About Me</h2>
+        <div class="about-container">
+          <img
+            src="Pics/about me pic.jpg"
+            alt="Professional Photo"
+            class="profile-photo"
+          />
+
+          <div class="about-content">
+
+            <div class="about-tabs">
+              <button class="tab-btn active" data-tab="personal" style="font-size: 22px;">
+                Personal
+              </button>
+              <button class="tab-btn" data-tab="education" style="font-size: 22px;">Education</button>
+              <button class="tab-btn" data-tab="hobbies" style="font-size: 22px;">Hobbies</button>
+            </div>
+
+
+            <div class="tab-content-container">
+
+              <div
+                class="tab-content active"
+                id="personal"
+                style="font-size: 20px"
+              >
+                <h3>Who I Am</h3>
+                <p>
+                  I enjoy exploring new ideas, places and concepts and am always curious about how things work and eager to improve or even break them just to put them back together. A good challenge is always welcome, but there’s also a deep appreciation for simplicity when it’s done right. Outside of projects, I enjot spending time outoodrs, whether it’s a walk in the park to clear the head or hanging out with mates. Straightforward, well-designed, and purposeful things are always preferred.
+                </p>
+              </div>
+
+
+              <div class="tab-content" id="education" style="font-size: 20px">
+                <h3>My Education</h3>
+                <p>
+                  Currently studying at Rochdale Sixth Form College
+                  <br />
+                  Achieved all 8s and 9s at GCSE (a 5 in German doesn't count)
+                  <br />
+                  Currently predicted 4 A*s in Maths, Further Maths, Computer
+                  Science, EPQ
+                  <br />
+                  Wish to go to university or degree apprenticeship in computer
+                  science/ai/software engineering
+                </p>
+              </div>
+
+
+              <div class="tab-content" id="hobbies" style="font-size: 20px">
+                <h3>My Interests</h3>
+                <p>
+                  Academically, I like maths, problem solving and finding out
+                  why something happens.
+                  <br />
+                  I also like programming and research into technological
+                  advances.
+                  <br />
+                  Outside of academics, I enjoy going outside on walks, playing chess, going
+                  for runs in the park, swimming or meeting with my mates.
+                  <br />
+                  I also like reading a lot. My top 3 books are Lord of the
+                  Mysteries, Shadow Slave and Reverend Insanity.
+                </p>
+              </div>
+            </div>
+
+
+            <a href="Not_Available.pdf" class="btn" download>Download CV (not available)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="projects" class="section">
+      <div class="content">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <img src="Pics\Evolution Sim 1.png" alt="Project 1" />
+            <div class="card-content">
+              <h3>
+                Evolution Simulator</h3>
+              <p>with AI NEAT Algorithm and Custom (mini) Physics Engine in Monogame C#</p>
+              <br>
+              <p>January 2024 to December 2024</p>
+
+              <button class="find-more-btn" data-project="1">Find More</button>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="Pics\Rocket ai 3.png" alt="Project 2" />
+            <div class="card-content">
+              <h3>Rocket Landing AI</h3>
+              <p>in 2D environment with adjusted physics and 3 boosters</p>
+              <br>
+              <br>
+              <p>November 2024 to December 2024</p>
+              <button class="find-more-btn" data-project="2">Find More</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="Pics\Particle Sim 2.png" alt="Project 3" />
+            <div class="card-content">
+              <h3>Particle/Fluid Simulation</h3>
+              <p>in 2D space with own implementations of physics classes and particle movement</p>
+              <br>
+              <p>February 2025</p>
+              <button class="find-more-btn" data-project="3" style="color: white;">Find More</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="Pics/Handwriting ai 3.png" alt="Project 2" />
+            <div class="card-content">
+              <h3>Digit Handwriting Recognition AI</h3>
+              <p>using C#, Windows Forms and building the neural network from scratch (0 libraries)</p>
+              <br>
+              <br>
+              <p>February 2025</p>
+              <button class="find-more-btn" data-project="4">Find More</button>
+            </div>
+          </div>
+
+
+
+          
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      id="skills"
+      class="section"
+      style="padding-top: 500px; padding-bottom: 200px"
+    >
+      <div class="content">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Fluent</span>
+              </div>
+              <p>Chinese (Mandarin)</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 100%"></div>
+              </div>
+              <div class="skill-description">
+                I am completely fluent in Mandarin
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Fluent</span>
+              </div>
+              <p>English</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 100%"></div>
+              </div>
+              <div class="skill-description">
+                I am completely fluent in English
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Olympic</span>
+              </div>
+              <p>Swimming</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 65%"></div>
+              </div>
+              <div class="skill-description">
+                I was able to achieve British and English National Champion in
+                swimming before ultimately deciding to focus on studies
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Expert</span>
+              </div>
+              <p>C# (and other languages)</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 62%"></div>
+              </div>
+              <div class="skill-description">
+                I am quite familiar with C# since I have been using it
+                for 5 years, but there is no doubt that I still have much to
+                learn with it. In regards to other languages, I am not as experienced with them as I am with C#. I know Python enough to make an AI transformer model using Pytorch and I know a bit of HTML, CSS and JS as evident with this website.
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Expert</span>
+              </div>
+              <p>AI and Machine Learning</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 20%"></div>
+              </div>
+              <div class="skill-description">
+                I have done some AI projects here and there, exploring concepts
+                like NEAT, backpropagation and genetic algorithms, but there is
+                still so much more potential that we have yet to explore with AI
+              </div>
+            </div>
+          </div>
+
+
+          <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Beginner</span>
+                <span class="skill-right-label">Expert</span>
+              </div>
+              <p>Academic Writing</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 67%"></div>
+              </div>
+              <div class="skill-description">
+                I am currently doing an EPQ and also writing up my Computer Science A level coursework. My EPQ is ~5000 words itself and my coursework is about 270 pages (50k words) on planning, designing, coding, testing and evaluating an evolution simulator using AI and ML. I feel like with these projects, I have learnt alot to do with academic writing and how to present concepts/designs in words.
+              </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill">
+              <div class="skill-labels">
+                <span class="skill-left-label">Disorganised</span>
+                <span class="skill-right-label">Extremely Effective</span>
+              </div>
+              <p>Presentation/Communication</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <div class="skill-description">
+                I believe I can organise, communicate and present projects efficiently. For organisation, I was/am able to make every single project deadline during high school and sixth form with time to spare and check, and this is on top of other dedications that also take time. I have also taken part in many team projects, and in which I always effectively communicate thoughts and ideas to the leaders (or listen to others if I was the leader) to ensure we all knew what we were doing. I have presented multiple projects to various people, such as the principal of my college and University of Cambridge students and even some professors there.
+              </div>
+            </div>
+        </div>
+
+        
+
+
+        
+
+
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+<section id="achievements" class="section">
+  <div class="content">
+    <h2>Achievements &amp; Awards</h2>
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <div class="achievement-img-container" >
+          <img src="Pics/Nationals1.jpg" alt="Trophy" class="achievement-img">
+        </div>
+        <h3>2022 | British National Champion and Medallist in Swimming</h3>
+        <p>Competed at British and English Nationals and medalled/won at 200Br and 100Fly</p>
+        <span class="achievement-date">July-August 2022, Sheffield, Ponds Forge</span>
+      </div>
+
+
+
+      <div class="achievement-card">
+        <div class="achievement-img-container">
+         <img src="Pics/AI certificate.jpg" alt="Certificate" class="achievement-img">
+        </div>
+        <h3>AI and Machine Learning Award</h3>
+        <p>
+          Issued by University of Cambridge, ADA Computer Science, Raspberry PI Foundation</p>
+        <span class="achievement-date">April 2024 - Cambridge</span>
+      </div>
+
+
+      <div class="achievement-card">
+        <div class="achievement-img-container" >
+        <img src="Pics/ada cs questions.png" alt="Medal" class="achievement-img">
+      </div>
+        <h3>Over 1000 questions completed between IsaacPhysics and ADA CS</h3>
+        <p>As part of the STEMSMART programme, I have completed over 1000 questions between IsaacPhysics and ADA CS as part of the programme content</p>
+        <span class="achievement-date">2024-2025, Manchester</span>
+      </div>
+
+
+      <div class="achievement-card">
+        <div class="achievement-img-container" >
+        <img src="Pics/Cambridge3.png" alt="Medal" class="achievement-img">
+        </div>
+        <h3>Invited and attended a 5 day residential at University of Cambridge</h3>
+        <p>As part of the STEMSMART programme, I completed enough questions and attended enough lectures by leading professors that I was able to get invited to a residential over summer. I stayed at Churchill College and we were given example lectures and workshops lead by professionals in industry</p>
+        <span class="achievement-date">2024 August, Cambridge</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-img-container" >
+        <img src="Pics/Stemsmart Certificate.png" alt="Medal" class="achievement-img">
+        </div>
+        <h3>Attained a Gold Award Certificate From Uni of Cambridge</h3>
+        <p>I was able to complete Phase 1 and 2 of STEMSMART, which is an initiative ran by University of Cambridge, to a high degree which allowed me to achieve the gold award for the programme</p>
+        <span class="achievement-date">2024-2025, Manchester</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-body">
+          <h3>Project Title</h3>
+          <p>Detailed project information. Replace with your own content.</p>
+          <img src="project-detail.jpg" alt="Project Detail" />
+        </div>
+      </div>
+    </div>
+
+
+    <button id="back-to-top" title="Back to Top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <button id="mode-toggle" title="Toggle Light/Dark Mode">
+      <i class="fas fa-adjust"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
