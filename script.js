@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     /* -------------------------------
        Light/Dark Mode Toggle
-       When toggling mode, if current effect is Bubbles or Shapes, update their colours without clearing.
     ------------------------------- */
     modeToggleBtn.addEventListener('click', function() {
         const isDarkMode = document.body.classList.toggle('dark-mode');
@@ -175,9 +174,54 @@ document.addEventListener('DOMContentLoaded', function() {
        Spotlight Handlers
     ------------------------------- */
     function spotlightMouseMove(e) {
-      const x = e.clientX, y = e.clientY;
-      spotlightOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, white 125px, transparent 250px)`;
+
+      if (window.innerWidth <= 768) return;
+      const x = e.clientX;
+      const y = e.clientY;
+      
+
+      
+
+      if (e.target.closest('[data-no-spotlight], .no-spotlight')) {
+
+        spotlightOverlay.style.zIndex = '0';
+      } else {
+
+        spotlightOverlay.style.zIndex = '300';
+      }
+      
+      spotlightOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, white 80px, transparent 180px)`;
     }
+    
+    function updateSpotlightVisibility() {
+      if (window.innerWidth <= 768) {
+        spotlightOverlay.style.display = 'none';
+        document.removeEventListener('mousemove', spotlightMouseMove);
+        backgroundIndicator.innerText = currentEffectName === "Mouse-Tracking Spotlight" 
+          ? "N/A on mobile" 
+          : currentEffectName;
+      } else {
+        backgroundIndicator.innerText = currentEffectName;
+        if (currentEffectName === "Mouse-Tracking Spotlight") {
+          spotlightOverlay.style.display = 'block';
+          document.addEventListener('mousemove', spotlightMouseMove);
+        }
+      }
+    }
+    
+    
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      spotlightOverlay = document.getElementById('spotlight-overlay'); 
+      
+
+
+      updateSpotlightVisibility();
+    });
+    
+    window.addEventListener('resize', updateSpotlightVisibility);
+    
+    
     function enableSpotlight() {
       spotlightOverlay.style.display = 'block';
       document.addEventListener('mousemove', spotlightMouseMove);
@@ -203,25 +247,30 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: "Gradient Background",
         init: function() {
-      const lightPalettes = [
-        'linear-gradient(45deg,rgb(239, 150, 150), #4ecdc4,rgb(139, 148, 207))',
-        'linear-gradient(45deg,rgb(221, 142, 145),rgb(247, 218, 210),rgb(191, 159, 135))',
-        'linear-gradient(45deg, #84fab0, #8fd3f4, #84fab0)'
-      ];
-      
-      const darkPalettes = [
-        'linear-gradient(45deg,rgb(46, 46, 99),rgba(27, 151, 223, 0.72), #2A2A72)',
-        'linear-gradient(45deg,rgb(121, 44, 189),rgba(75, 0, 224, 0.67),rgb(81, 33, 123))', 
-      ];
+          disableSpotlight();
+          dynamicBackground.style.background = '';
+          
+          const lightPalettes = [
+            'linear-gradient(45deg, rgba(57, 168, 68, 0.5),rgb(88, 214, 125), rgb(139, 148, 207))',
+            'linear-gradient(45deg, rgb(195, 116, 119), rgb(255, 255, 255), rgb(134, 120, 200))',
+            'linear-gradient(45deg,rgb(234, 106, 123),rgb(119, 93, 238), #84fab0)'
+          ];
+          
+          const darkPalettes = [
+            'linear-gradient(45deg, rgba(100, 100, 216, 0.7), rgba(134, 80, 39, 0.72),rgb(25, 25, 159))',
+            'linear-gradient(45deg, rgba(59, 166, 83, 0.53), rgba(166, 28, 23, 0.67), rgb(64, 22, 101))', 
+          ];
+    
+          const isDark = document.body.classList.contains('dark-mode');
+          const palettes = isDark ? darkPalettes : lightPalettes;
+          const randomPalette = palettes[Math.floor(Math.random() * palettes.length)];
+          
 
-      const isDark = document.body.classList.contains('dark-mode');
-      const palettes = isDark ? darkPalettes : lightPalettes;
-      const randomPalette = palettes[Math.floor(Math.random() * palettes.length)];
-      
-      dynamicBackground.style.background = randomPalette;
-      dynamicBackground.style.backgroundSize = '400% 400%';
-      dynamicBackground.style.animation = 'gradientShift 10s ease infinite';
-      dynamicBackground.style.transition = 'background 0.8s ease';
+          
+          dynamicBackground.style.background = randomPalette;
+          dynamicBackground.style.backgroundSize = '400% 400%';
+          dynamicBackground.style.animation = 'gradientFlow 7s ease infinite';
+          dynamicBackground.style.transition = 'background 0.8s ease';
         }
       },
       {
@@ -241,9 +290,13 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: "Floating Bubbles",
         init: function() {
+          
             bubblesActive = true;
           function createBubble(delay = 0) {
+            disableSpotlight();
+            dynamicBackground.style.background = 'transparent';
             if (!bubblesActive) return;
+            
             setTimeout(() => {
               if (!bubblesActive) return;
               const bubble = document.createElement('div');
@@ -970,8 +1023,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
           } else {
             content.innerHTML = `
-              <h3>Project Title</h3>
-              <p>Detailed project information...</p>
+              <h3>Project </h3>
+              <p></p>
             `;
           }
           
@@ -1059,17 +1112,49 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
     backgroundIndicator.addEventListener('click', function() {
-        clearBackground();
-        currentEffectIndex = (currentEffectIndex + 1) % backgroundEffects.length;
-        currentEffectName = backgroundEffects[currentEffectIndex].name;
+      clearBackground();
+      
+      const totalEffects = backgroundEffects.length;
+      const isMobile = window.innerWidth <= 768;
+    
+
+      
+      let nextIndex;
+      let attempts = 0;
+      
+      do {
+        nextIndex = (currentEffectIndex + 1) % totalEffects;
         
 
-        backgroundIndicator.innerText = currentEffectName;
         
+        if (isMobile && backgroundEffects[nextIndex].name === "Mouse-Tracking Spotlight") {
+          currentEffectIndex = nextIndex;
+          attempts++;
+          if (attempts > totalEffects * 2) break; 
+          
 
-        backgroundEffects[currentEffectIndex].init();
-      });
-  
+          continue;
+        }
+        
+        break;
+      } while(true);
+    
+      currentEffectIndex = nextIndex;
+      currentEffectName = backgroundEffects[currentEffectIndex].name;
+      
+
+      backgroundIndicator.textContent = isMobile && currentEffectName === "Mouse-Tracking Spotlight" 
+        ? "N/A on mobile" 
+        : currentEffectName;
+    
+
+      backgroundEffects[currentEffectIndex].init();
+      updateSpotlightVisibility();
+    });
+    
+
+    backgroundEffects[0].init();
+    backgroundIndicator.textContent = currentEffectName;
   });
   
 
@@ -1226,4 +1311,15 @@ document.addEventListener('touchstart', function(e) {
   }
 });
 
+
+document.querySelectorAll('.progress').forEach(progress => {
+  const targetWidth = progress.parentElement.getAttribute('data-target');
+  progress.style.setProperty('--target-width', targetWidth);
   
+
+  const percentage = progress.closest('.skill').querySelector('.percentage');
+  progress.addEventListener('animationiteration', () => {
+    const currentWidth = parseFloat(progress.style.width) || 20;
+    percentage.textContent = `${Math.round(currentWidth)}%`;
+  });
+});
