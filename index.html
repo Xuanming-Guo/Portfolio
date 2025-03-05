@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="styles.css" />
    </head>
-  <body>
+  <body class="dark-mode">
 
     <div id="dynamic-background"></div>
 
@@ -45,6 +45,9 @@
         <p class="header-text">
           Current Rochdale Sixth Form Student
         </p>
+        <footer id="site-footer">
+          <p>Website made by me with HTML, CSS, and JS</p>
+        </footer>
         <div class="social-icons dynamic-text">
 
           <a
@@ -77,11 +80,14 @@
       <div class="content">
         <h2>About Me</h2>
         <div class="about-container">
+          <div class="no-spotlight">
           <img
             src="Pics/about me pic.jpg"
             alt="Professional Photo"
             class="profile-photo"
+            data-no-spotlight
           />
+        </div>
 
           <div class="about-content">
 
@@ -143,7 +149,7 @@
             </div>
 
 
-            <a href="Not_Available.pdf" class="btn" download>Download CV (not available)</a>
+            <a href="Why did u click this.pdf" class="btn" download>Download CV (not available)</a>
           </div>
         </div>
       </div>
@@ -220,13 +226,12 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Fluent</span>
+
               </div>
               <p>Chinese (Mandarin)</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 100%"></div>
-              </div>
+
+              
+
               <div class="skill-description">
                 I am completely fluent in Mandarin
               </div>
@@ -236,13 +241,12 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Fluent</span>
+
               </div>
               <p>English</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 100%"></div>
-              </div>
+
+              
+
               <div class="skill-description">
                 I am completely fluent in English
               </div>
@@ -252,13 +256,10 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Olympic</span>
+
               </div>
               <p>Swimming</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 65%"></div>
-              </div>
+              
               <div class="skill-description">
                 I was able to achieve British and English National Champion in
                 swimming before ultimately deciding to focus on studies
@@ -269,13 +270,10 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Expert</span>
+
               </div>
               <p>C# (and other languages)</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 62%"></div>
-              </div>
+              
               <div class="skill-description">
                 I am quite familiar with C# since I have been using it
                 for 5 years, but there is no doubt that I still have much to
@@ -287,13 +285,10 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Expert</span>
+
               </div>
               <p>AI and Machine Learning</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 20%"></div>
-              </div>
+              
               <div class="skill-description">
                 I have done some AI projects here and there, exploring concepts
                 like NEAT, backpropagation and genetic algorithms, but there is
@@ -306,13 +301,10 @@
           <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Beginner</span>
-                <span class="skill-right-label">Expert</span>
+
               </div>
               <p>Academic Writing</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 67%"></div>
-              </div>
+              
               <div class="skill-description">
                 I am currently doing an EPQ and also writing up my Computer Science A level coursework. My EPQ is ~5000 words itself and my coursework is about 270 pages (50k words) on planning, designing, coding, testing and evaluating an evolution simulator using AI and ML. I feel like with these projects, I have learnt alot to do with academic writing and how to present concepts/designs in words.
               </div>
@@ -322,13 +314,10 @@
         <div class="skill-card">
             <div class="skill">
               <div class="skill-labels">
-                <span class="skill-left-label">Disorganised</span>
-                <span class="skill-right-label">Extremely Effective</span>
+
               </div>
               <p>Presentation/Communication</p>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%"></div>
-              </div>
+              
               <div class="skill-description">
                 I believe I can organise, communicate and present projects efficiently. For organisation, I was/am able to make every single project deadline during high school and sixth form with time to spare and check, and this is on top of other dedications that also take time. I have also taken part in many team projects, and in which I always effectively communicate thoughts and ideas to the leaders (or listen to others if I was the leader) to ensure we all knew what we were doing. I have presented multiple projects to various people, such as the principal of my college and University of Cambridge students and even some professors there.
               </div>
@@ -361,7 +350,9 @@
 
       <div class="achievement-card">
         <div class="achievement-img-container" >
-          <img src="Pics/Nationals1.jpg" alt="Trophy" class="achievement-img">
+          <div class="no-spotlight">
+          <img src="Pics/Nationals1.jpg" alt="Trophy" class="achievement-img" data-no-spotlight>
+        </div>
         </div>
         <h3>2022 | British National Champion and Medallist in Swimming</h3>
         <p>Competed at British and English Nationals and medalled/won at 200Br and 100Fly</p>
